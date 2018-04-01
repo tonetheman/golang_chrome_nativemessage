@@ -20,6 +20,13 @@ except Exception as e:
 # print(NUM_TEST_CASES, file=p.stdin)
 p.stdin.buffer.write(struct.pack("I",4))
 p.stdin.buffer.write(b"tony")
+p.stdin.flush()
+
+import time
+time.sleep(4)
 
 p.stdin.buffer.write(struct.pack("I",6))
 p.stdin.buffer.write(b"tonyxx")
+p.stdin.flush()
+
+time.sleep(2)
