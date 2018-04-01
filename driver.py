@@ -2,8 +2,8 @@
 import subprocess, sys
 import struct
 
-cmd = "go run prog.go"
-
+# cmd = "go run prog.go"
+cmd = "node nprog.js"
 try:
   p = subprocess.Popen(
       cmd,
