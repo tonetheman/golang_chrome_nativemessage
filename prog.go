@@ -64,4 +64,6 @@ func main() {
 	log.SetOutput(f)
 	log.Println("started...")
 	stdinRead()
+	stdinRead()
+	log.Println("fin")
 }
