@@ -16,8 +16,15 @@ process.stdin.on("readable", function(){
     let buffer = new Buffer(4);
     let bytesRead = fs.readSync(process.stdin.fd,buffer,0,4);
     log(bytesRead);
-    log(typeof buffer);
+    log(buffer.toString("hex"));
+    let needToRead = buffer.readUInt32LE();
+    log("need to read: " + needToRead);
     log("----");
+
+    let messageBuffer = new Buffer(needToRead);
+    bytesRead = fs.readSync(process.stdin.fd, messageBuffer,0,needToRead)
+    log("read the message!");
+    log(messageBuffer.toString());
     /*
     // tony notes this would only return a strign
     // tried removing setEncoding line did not help
