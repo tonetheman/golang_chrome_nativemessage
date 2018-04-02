@@ -90,8 +90,6 @@ class TonyWriteStream extends Writable {
         // read a string starting at byte 4
         // end here is 4 + needToRead
         let msg = chunk.toString("utf8",4, 4+needToRead);
-        // this is valid too but loose
-        // let msg = chunk.toString("utf8",4)
         log("TS:_write:msg: " + msg);
         callback();
     }
